@@ -1,6 +1,8 @@
 package com.example.composedemo
 
 import android.os.Bundle
+import android.view.Menu
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
@@ -19,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.example.composedemo.ui.theme.ComposeDemoTheme
 
 import androidx.compose.ui.Alignment
+import java.util.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +44,29 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        //Live Templates
+        //Ctrl + .,
+        //toast and tab -> Toast 자주 쓰는 템플릿 기능
+        //쓸 수 있는 영역에서만 써야함
+        //함수 밖에서 하려니 안되넹..
+        Toast.makeText(applicationContext, "", Toast.LENGTH_SHORT).show()
+        //이 때는 Ctrl + Space 눌러서
+        //applicatoinContext 도 잘 검색됨..
+    }
+
+    //Code Generation
+    // Alt + Insert
+    //notify for destroying
+    //add onStop <- stubMethod <- Override Methods..
+    override fun onStop() {
+        super.onStop()
+    }
+    //Ctrl+Shift+(+/-)
+    //코드를 시그니처만 볼 수 있는 단축키
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        return super.onPrepareOptionsMenu(menu)
     }
 }
 
@@ -132,5 +158,20 @@ fun Preview() {
 // Ctrl + Shift + Enter
 // fun myMethod() 까지만 추가하고 위의 키를 누르면 줄괄호가 자동으로 추가된다.
 fun myMethod() {
+    //Available Parameters info
+    //Ctrl + p <- shortcut 이 Windows 일 때만 적용됨..
+    val myButtonText: String = String.format(
+        locale = Locale.KOREAN,
+        format = "Test"
+    )
 
+    //Alt + F8 -> Finding Sample code
+    //val FindingSampleCode : String = String.format
+    //format 이 안되서 찾으려고 했더니 안찾아지네..
+    //Activity 쪽에 가서 찾아보자..
+
+    //안찾아진다..--;;
+    //전문가에게 물어봐야겠당..
 }
+
+
