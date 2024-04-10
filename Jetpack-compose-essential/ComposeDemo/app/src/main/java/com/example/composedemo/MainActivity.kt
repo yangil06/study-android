@@ -127,3 +127,10 @@ fun DemoScreen() {
 fun Preview() {
     DemoScreen()
 }
+
+//Statement completion
+// Ctrl + Shift + Enter
+// fun myMethod() 까지만 추가하고 위의 키를 누르면 줄괄호가 자동으로 추가된다.
+fun myMethod() {
+
+}
